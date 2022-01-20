@@ -1,0 +1,193 @@
+* {
+    font-family: Georgia;
+
+}
+body{
+    color: #e2e8f0;
+    background-color: #1a202c;
+}
+
+
+#samenstellen {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-image: url("/images/pizza-jill.jpg");
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    inset: 90px;
+    visibility: hidden;
+
+}
+
+.verwijder {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.containersplitsen {
+    overflow: hidden;
+    opacity: 0.8;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100px 1fr 200px 1fr 100px;
+    grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr;
+}
+
+aside {
+    background-color: red;
+    opacity: 0.8;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+.vlees {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.kaas {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.groete_fruit {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.vis {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.container {
+    display: grid;
+    overflow: scroll;
+    grid-template-rows: 0.2fr 3fr;
+}
+
+.soort {
+
+    background-color: black;
+    text-align: center;
+    color: white;
+    grid-row: 1;
+}
+
+center {
+
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.width80 {
+
+
+    width: 80%;
+    align-items: center;
+    justify-items: center;
+}
+
+.small{
+    font-size: medium;
+}
+
+/* menu */
+.nav {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.item-nav {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+.item-nav:hover {
+    color: red;
+    transition: 0.5s;
+
+}
+
+.item-nav:active {
+    color: red;
+}
+
+.header-img {
+
+    width: 100%;
+    height: 200px;
+}
+
+/* pizza container */
+.flex-container-pizzas {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px ;
+}
+
+.grid-pizza {
+    display: grid;
+    width: 250px;
+
+}
+
+.width300px {
+    width: 100%;
+}
+.container_contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+iframe{
+    width: 100%;
+}
+
+.container_gegevens{
+    margin: 20px;
+}
+svg:hover{
+    color: blue;
+    transition: 2s;
+}
+.container_order{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered {
+    position: absolute;
+font-size: x-large;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, -50%);
+}
+
+header{
+    position: relative;
+    text-align: center;
+    color: white;
+}
