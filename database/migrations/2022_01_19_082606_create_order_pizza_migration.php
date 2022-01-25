@@ -19,6 +19,8 @@ class CreateOrderPizzaMigration extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('order');
             $table->primary(['pizza_id', 'order_id']);
+            $table->integer('qty');
+
         });
     }
 
@@ -29,6 +31,6 @@ class CreateOrderPizzaMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_pizza_migration');
+        Schema::dropIfExists('order_pizza');
     }
 }

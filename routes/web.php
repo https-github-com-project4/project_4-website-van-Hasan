@@ -54,6 +54,9 @@ Route::post('/order',[OrderController::class ,'store'])->Name('order.store');
 Route::get('/order/{order}/pizzas',[OrderController::class,'show'])->name('order.pizzas');
 Route::post('/order/{orderid}/pizzas/{pizzaid}',[OrderPizzaController::class,'store'])->name('order_pizzas.store');
 
+Route::get('/orders/{orderid}',[OrderPizzaController::class,'show'])->name('orders.show');
+
+
 Route::get('/about', function () {
     return view('about');
 });
