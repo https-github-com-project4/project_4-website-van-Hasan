@@ -21,11 +21,16 @@ class Order extends Model
         'phone',
         'address',
         'zipcode',
+        'states_id',
     ];
 
 
     public function pizzas(){
         return $this->belongsToMany(Pizza::class)->withPivot('qty');
     }
+    public function states(){
+        return $this->hasMany(States::class);
+    }
+
 
 }

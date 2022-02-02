@@ -20,7 +20,6 @@ class CreateOrderPizzaMigration extends Migration
             $table->foreign('order_id')->references('id')->on('order');
             $table->primary(['pizza_id', 'order_id']);
             $table->integer('qty');
-
         });
     }
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Pizza;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PizzaController extends Controller
@@ -14,8 +16,9 @@ class PizzaController extends Controller
      */
     public function index()
     {
-
+        return view('pizza', ['pizzas' => Pizza::all(), 'order'=> Order::all()]);
     }
+
 
     /**
      * Show the form for creating a new resource.

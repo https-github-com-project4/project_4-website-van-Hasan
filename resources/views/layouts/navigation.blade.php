@@ -11,21 +11,30 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
+
+
                     <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                         {{ __('Admin') }}
                     </x-nav-link>
+                        <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                            {{ __('Users') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
+                            {{ __('employees') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('customer.index')" :active="request()->routeIs('customer.index')">
+                            {{ __('customer') }}
+                        </x-nav-link>
+
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                        {{ __('Users') }}
+
+                        <x-nav-link :href="route('pizzas.index')" :active="request()->routeIs('pizzas.index')">
+                        {{ __('Menu') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')">
-                        {{ __('employees') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('customer.index')" :active="request()->routeIs('customer.index')">
-                        {{ __('customer') }}
-                    </x-nav-link>
+
 
                 </div>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -59,7 +60,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::find($id);
+//        dd($order);
+        return view('status',['order'=>$order, 'pizzas'=>Pizza::all()]);
     }
 
     /**
@@ -67,11 +70,18 @@ class OrderController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+//        $order = Order::find($id);
+//        $order->update($request->only('states_id'=> 2));
+
+
+        $order = DB::table('order')
+            ->where('id', $id)
+            ->update(['states_id' => 2]);
+          return redirect()->route('winkelmand-status.edit', ['orderid' => $id]);
     }
 
     /**
