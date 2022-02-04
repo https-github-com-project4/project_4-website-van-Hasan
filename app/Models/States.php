@@ -28,7 +28,7 @@ class States extends Model
      */
     public $timestamps = false;
 
-    public function order(){
-        return $this->belongsTo(Order::class, 'states_id');
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

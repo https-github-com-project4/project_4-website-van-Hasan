@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Pizza;
+use App\Models\States;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -56,13 +57,13 @@ class OrderController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
         $order = Order::find($id);
 //        dd($order);
-        return view('status',['order'=>$order, 'pizzas'=>Pizza::all()]);
+        return view('status',['order'=>$order, 'pizzas'=>Pizza::all(), 'states'=>States::all()]);
     }
 
     /**
@@ -80,7 +81,7 @@ class OrderController extends Controller
 
         $order = DB::table('order')
             ->where('id', $id)
-            ->update(['states_id' => 2]);
+            ->update(['status_id' => 2]);
           return redirect()->route('winkelmand-status.edit', ['orderid' => $id]);
     }
 

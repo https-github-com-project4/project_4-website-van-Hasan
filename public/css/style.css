@@ -59,6 +59,63 @@ h2{
     grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr;
 }
 
+#phonenumber{
+    width: 100%;
+}
+/*textkleur wit in status.blade.php*/
+.status_body{
+    color: #e2e8f0;
+}
+.afrondenDiv{
+    width: 200px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#afronden{
+    width: 100%;
+}
+
+.message{
+    color: #4ade80;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+/*de table style van winkelmand.blade.php*/
+.winkelmandTable{
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.winkelmandTable td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+/*de table style in status.blade.php*/
+.status_table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.status_table td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.status_tr:nth-child(even) {
+    background-color: #067506;
+}
+
+#terugNaarMenu{
+position: fixed;
+  bottom: 10%;
+  right: 10%;
+}
+
 aside {
     background-color: red;
     opacity: 0.8;
@@ -168,6 +225,7 @@ center {
     column-gap: 300px;
     row-gap: 100px;
     justify-content: center;
+    color: #e2e8f0;
 
 }
 
@@ -244,6 +302,10 @@ header {
 
 input[type="text"] {
 
+    color: black;
+}
+input[type="number"] {
+    width: 50px;
     color: black;
 }
 

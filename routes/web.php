@@ -65,14 +65,14 @@ Route::post('/order/{orderid}/pizzas/{pizzaid}',[OrderPizzaController::class,'st
 
 
 //de show weergeeft de winkelmand.blade.php met de order/klant gegevens en de pizzas die de klant heeft aan zijn bestelling toegevoegd.
-Route::get('/winkelmand/{orderid}',[winkelmandController::class,'show'])->name('orders.show')->name('winkelmand.show');
+Route::get('/winkelmand/{orderid}',[OrderPizzaController::class,'show'])->name('orders.show')->name('winkelmand.show');
 
 //verwijder een pizza van de bestelling
 Route::post('/pizza/delete/{pizzaid}/{orderid}',[OrderPizzaController::class,'destroy'])->name('order_pizzas.destroy');
 
 //bestelling afronden
 Route::put('/winkelmad/{orderid}', [OrderController::class, 'update'])->Name ('winkelmand-status.update');
-Route::get('/winkelmad/{orderid}/statusupdate', [OrderController::class, 'edit'])->Name ('winkelmand-status.edit');
+Route::get('/order/{orderid}/status', [OrderController::class, 'edit'])->Name ('winkelmand-status.edit');
 
 
 Route::get('/about', function () {

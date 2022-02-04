@@ -13,29 +13,38 @@
     <body class="winkelmand" >
 
     <hr>
+    <table class="winkelmandTable">
+        <tr>
+            <th>Product</th>
+            <th>Aantal</th>
+            <th>Prijs P/S</th>
+            <th>verwijderen</th>
+        </tr>
             @foreach($order->pizzas as $pizza)
-                <ul>
-                   <h3>  Pizza:  {{$pizza->name}} </h3>
-                   <li> Aantal: {{$pizza->pivot->qty}} </li>
-                   <li> Prijs P/S: € {{$pizza->price}}  </li>
-                </ul>
+            <tr>
+                <td>{{$pizza->name}}</td>
+                <td>{{$pizza->pivot->qty}}</td>
+                <td>€ {{$pizza->price}}</td>
+           <td>
                 <form action="{{route('order_pizzas.destroy', ['pizzaid' => $pizza->id, 'orderid'=>$order->id])}}" method="POST">
                     @csrf
                     <input type="submit" value="verwijderen"  class="input_bestel bg-green-500 hover:bg-yellow-500" >
                     <hr>
                 </form>
-
-
+           </td>
             @endforeach
-
+            </tr>
+    </table>
+    <div class="afrondenDiv">
         <form action="{{route('winkelmand-status.update', [$order->id])}}" method="post">
         @csrf
         @method('put')
-            <input type="submit" value="Afronden" class="input_bestel bg-green-500 hover:bg-yellow-500">
+            <input id="afronden" type="submit" value="Afronden" class="input_bestel bg-green-500 hover:bg-yellow-500">
         </form>
+    </div>
 
 
-        <a href="/order/{{$order->id}}/pizzas">  <input type="button" value="Terug naar het menu!" class="input_bestel bg-green-500 hover:bg-yellow-500"/> </a>
+        <a href="/order/{{$order->id}}/pizzas">  <input id="terugNaarMenu" type="button" value="Terug naar het menu!" class="input_bestel bg-green-500 hover:bg-yellow-500"/> </a>
 
 
 

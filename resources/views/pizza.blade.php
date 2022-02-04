@@ -21,19 +21,19 @@
 
             <li class="flex-1 mr-2">
                 <a class="text-center block border border-green-500 rounded py-2 px-4 bg-green-500 hover:bg-yellow-500 text-white"
-                   href="/">About us</a>
+                   href="/about">Over ons</a>
             </li>
 
             <li class="flex-1 mr-2">
                 <a class="text-center block border border-green-500 rounded py-2 px-4 bg-green-500 hover:bg-yellow-500 text-white"
-                   href="/">Contact</a>
+                   href="/contact">Contact</a>
             </li>
 
 
             <li class="flex-1 mr-2">
                 <a class="text-center block border border-green-500 rounded py-2 px-4 bg-green-500 hover:bg-yellow-500 text-white"
                    href="/winkelmand/{{$order->id}}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="23" fill="currentColor" class="bi bi-cart"
                          viewBox="0 0 16 16">
                         <path
                             d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -62,11 +62,10 @@
 
 {{--            @yield('content')--}}
 {{--        </div>--}}
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="/js/app.js"></script>
 
+<div class="message" >
         @include('flash-message')
+</div>
         <div class="flex-container-pizzas">
 
 
@@ -80,7 +79,7 @@
                         <h2>Toppings:</h2>
                         <ul>
                             @foreach($pizza->ingredients as $ingredient)
-                                <li>{{$ingredient->name}}</li>
+                                {{$ingredient->name}},
                             @endforeach
                         </ul>
 

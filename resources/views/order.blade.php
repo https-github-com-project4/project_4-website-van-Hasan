@@ -64,14 +64,14 @@
                             <label name="phone">Telefoonnummer:</label>
                         </td>
                         <td>
-                            <input type="number" name="phone"></input>
+                            <input id="phonenumber" type="number" name="phone"></input>
                         </td>
 
                     </tr>
 
                     <tr>
                         <td>
-                            <label name="address">Adres:</label>
+                            <label name="address">Adres +(huisnummer):</label>
                         </td>
                         <td>
                             <input type="text" name="address" ></input>
@@ -86,7 +86,7 @@
                             <input type="text" name="zipcode" ></input>
                         </td>
                     </tr>
-                    <input type="hidden" name="states_id" value="1">
+                    <input type="hidden" name="status_id" value="1">
 
                 </table>
 

@@ -28,8 +28,8 @@ class Order extends Model
     public function pizzas(){
         return $this->belongsToMany(Pizza::class)->withPivot('qty');
     }
-    public function states(){
-        return $this->hasMany(States::class);
+    public function status(){
+        return $this->belongsTo(States::class);
     }
 
 

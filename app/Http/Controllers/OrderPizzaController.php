@@ -34,7 +34,7 @@ class OrderPizzaController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store($order_id,$pizza_id,Request $request)
     {
@@ -64,7 +64,7 @@ class OrderPizzaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('winkelmand', ['order'=>Order::find($id)]);
     }
 
     /**

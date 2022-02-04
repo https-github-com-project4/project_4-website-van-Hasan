@@ -16,28 +16,28 @@ class StatusSeeder extends Seeder
     {
         States::create([
             'id' => '1',
-            'status' => 'Niet afgerond',
+            'name' => 'Niet afgerond',
         ]);
         States::create([
             'id' => '2',
-            'status' => ' afgerond',
+            'name' => ' afgerond',
         ]);
 
         States::create([
             'id' => '3',
-            'status' => 'voorbereiding',
+            'name' => 'voorbereiding',
         ]);
         States::create([
             'id' => '4',
-            'status' => 'in de oven',
+            'name' => 'in de oven',
         ]);
         States::create([
             'id' => '5',
-            'status' => 'onderweg',
+            'name' => 'onderweg',
         ]);
         States::create([
             'id' => '6',
-            'status' => 'bezorged',
+            'name' => 'bezorged',
         ]);
 
     }
