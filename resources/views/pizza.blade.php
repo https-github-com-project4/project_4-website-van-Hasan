@@ -90,6 +90,7 @@
                               method="post">
                             @csrf
                             <input type="number" name="qty" value="1">
+                            <input type="hidden" name="size" value="1">
                             <input type="submit"
                                    value="Bestellen"
                                    class="input_bestel bg-green-500 hover:bg-yellow-500">

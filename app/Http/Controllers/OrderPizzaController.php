@@ -43,8 +43,9 @@ class OrderPizzaController extends Controller
             $order = Order::find($order_id);
             $pizza = Pizza::find($pizza_id);
             $qty = $request->input('qty');
+            $size = $request->input('size');
 
-            Order::find($order_id)->pizzas()->attach($pizza,['qty'=> $qty]);
+            Order::find($order_id)->pizzas()->attach($pizza,['qty'=> $qty, 'size' =>$size]);
             return redirect()->route('order.pizzas',['order'=>$order, 'pizzas'=>Pizza::all()])->with('success','Item is toegevoegd aan de winkelmand!');
 
         }
