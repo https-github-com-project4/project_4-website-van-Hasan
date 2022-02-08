@@ -24,7 +24,7 @@
         <tr class="status_tr">
             <td>{{$order->name}}</td>
             <td>  @foreach($order->pizzas as $pizza)
-                    {{$pizza->name}}
+                    {{$pizza->name,}}
                 @endforeach</td>
             <td>{{$order->status->name}}</td>
         </tr>

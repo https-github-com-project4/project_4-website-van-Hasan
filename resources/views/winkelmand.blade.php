@@ -28,25 +28,23 @@
            <td>
                 <form action="{{route('order_pizzas.destroy', ['pizzaid' => $pizza->id, 'orderid'=>$order->id])}}" method="POST">
                     @csrf
-                    <input type="submit" value="verwijderen"  class="input_bestel bg-green-500 hover:bg-yellow-500" >
+                    <input type="submit" value="verwijderen"  class="input_bestel bg-red-500 hover:bg-yellow-500" >
                     <hr>
                 </form>
            </td>
             @endforeach
             </tr>
+                <tr> <td>  <h1>totaal Prijs: €{{$order->totalPrice()}}</h1> </td></tr>
     </table>
+
     <div class="afrondenDiv">
         <form action="{{route('winkelmand-status.update', [$order->id])}}" method="post">
         @csrf
         @method('put')
             <input id="afronden" type="submit" value="Afronden" class="input_bestel bg-green-500 hover:bg-yellow-500">
         </form>
+
     </div>
-
-
         <a href="/order/{{$order->id}}/pizzas">  <input id="terugNaarMenu" type="button" value="Terug naar het menu!" class="input_bestel bg-green-500 hover:bg-yellow-500"/> </a>
-
-
-
     </body>
 </html>

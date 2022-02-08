@@ -21,7 +21,7 @@ class Order extends Model
         'phone',
         'address',
         'zipcode',
-        'states_id',
+        'status_id',
     ];
 
 
@@ -30,6 +30,16 @@ class Order extends Model
     }
     public function status(){
         return $this->belongsTo(States::class);
+    }
+
+    public function totalPrice()
+    {
+        $total = 0;
+        foreach($this->pizzas as $pizza)
+        {
+            $total += $pizza->price * $pizza->pivot->qty;
+        }
+        return $total;
     }
 
 

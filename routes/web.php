@@ -60,12 +60,12 @@ Route::post('/order',[OrderController::class ,'store'])->Name('order.store');
 Route::get('/order/{order}/pizzas',[OrderController::class,'show'])->name('order.pizzas');
 
 
-//pizzas bestellen (order en pizza in de tussen voegen -> (order_pizza)table)
+//pizzas bestellen (order en pizza in de tussentabel voegen -> (order_pizza table)
 Route::post('/order/{orderid}/pizzas/{pizzaid}',[OrderPizzaController::class,'store'])->name('order_pizzas.store');
 
 
 //de show weergeeft de winkelmand.blade.php met de order/klant gegevens en de pizzas die de klant heeft aan zijn bestelling toegevoegd.
-Route::get('/winkelmand/{orderid}',[OrderPizzaController::class,'show'])->name('orders.show')->name('winkelmand.show');
+Route::get('/winkelmand/{orderid}',[OrderPizzaController::class,'show'])->name('winkelmand.show');
 
 //verwijder een pizza van de bestelling
 Route::post('/pizza/delete/{pizzaid}/{orderid}',[OrderPizzaController::class,'destroy'])->name('order_pizzas.destroy');
